@@ -69,6 +69,8 @@ Surfaces non-private inherited fields and methods from the superclass directly i
 - `feat` Add `cpu` field for per-function CPU execution info — [#2039](https://github.com/namhyung/uftrace/pull/2039) ✅
 - `feat` Graph fields (total/self avg, min, max) in `cmds` & `tui` — [#1999](https://github.com/namhyung/uftrace/pull/1999) ✅
 - `feat` Support min/max timestamp in `uftrace report` — [#2032](https://github.com/namhyung/uftrace/pull/2032) ✅
+- `feat` Show callsite location with `--srcline` (DWARF line resolution via libdw) — [#2047](https://github.com/namhyung/uftrace/pull/2047) ✅
+- `fix`  Fix lost diff event from read trigger with argument tracing — [#2048](https://github.com/namhyung/uftrace/pull/2048) ✅
 
 <details>
 <summary><i>+6 more merged PRs (tests, build, fixes)</i></summary>
