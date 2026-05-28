@@ -1,103 +1,40 @@
-# 👋 Hi, I'm Junyeong Kim
+> A programmer who asks "why," and digs until the source answers.
 
-> *I read C source for fun. Sometimes I send patches back.*
+**Jun Yeong Kim** · CS @ Jeonju University · Korea
 
-<p align="left">
-  <img src="https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=c&logoColor=black" />
-  <img src="https://img.shields.io/badge/Rust-000000?style=flat-square&logo=rust&logoColor=white" />
-  <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" />
-  <img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white" />
-  <img src="https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black" />
-  <img src="https://img.shields.io/badge/eBPF-FF6B35?style=flat-square&logo=linuxfoundation&logoColor=white" />
-  <img src="https://img.shields.io/badge/GDB-A42E2B?style=flat-square&logo=gnu&logoColor=white" />
-</p>
+![C](https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=c&logoColor=black)
+![Rust](https://img.shields.io/badge/Rust-000000?style=flat-square&logo=rust&logoColor=white)
+![eBPF](https://img.shields.io/badge/eBPF-FF6B35?style=flat-square&logo=linuxfoundation&logoColor=white)
+![JVM](https://img.shields.io/badge/JVM-007396?style=flat-square&logo=openjdk&logoColor=white)
+
+Drawn to systems programming — kernels, tracers, runtimes, anything where the abstraction leaks.
 
 ---
 
-## 🧑‍💻 About
+## Upstream patches
 
-- 🎓 3rd-year CS student at **Jeonju University**
-- 🐧 Drawn to **systems programming** — kernels, tracers, runtimes
-- 🌱 Active in open source: `uftrace` · `valkey` · `stumpless` · `airflow`
-- 🛠️ Currently building **VectorGuard** (eBPF runtime security) & **VectorWave** (LLM framework)
-- 💬 Korean / English
+| Project | ★ | Merged |
+|---|---|---|
+| [namhyung/uftrace](https://github.com/namhyung/uftrace) | 3.4k | `--srcline` callsite resolution [#2047](https://github.com/namhyung/uftrace/pull/2047) · per-fn CPU field [#2039](https://github.com/namhyung/uftrace/pull/2039) · graph min/max/avg fields [#1999](https://github.com/namhyung/uftrace/pull/1999) · report timestamp range [#2032](https://github.com/namhyung/uftrace/pull/2032) · lost-diff fix in `mcount` [#2048](https://github.com/namhyung/uftrace/pull/2048) · _+6 more_ |
+| [apache/airflow](https://github.com/apache/airflow) | 45k | Task SDK `Variable.keys()` [#66022](https://github.com/apache/airflow/pull/66022) · datetime paste in picker [#66251](https://github.com/apache/airflow/pull/66251) · Ko i18n [#66267](https://github.com/apache/airflow/pull/66267) |
+| [valkey-io/valkey](https://github.com/valkey-io/valkey) | 26k | Cluster test framework migration [#3382](https://github.com/valkey-io/valkey/pull/3382) |
+| [goatshriek/stumpless](https://github.com/goatshriek/stumpless) | 521 | `struct to_string` [#501](https://github.com/goatshriek/stumpless/pull/501) · Ko i18n [#502](https://github.com/goatshriek/stumpless/pull/502) |
 
----
+## Building
 
-## 🚀 Featured Projects
+**[VectorGuard](https://github.com/Cozymori/VectorGuard)** — eBPF runtime security daemon. Rule-engine on the fast path, behavior-embedding + Qdrant on the slow path, `bpf_send_signal(SIGKILL)` for kernel-level blocking. `Rust` · `aya` · `LSM`
 
-### 🛡️ [VectorGuard](https://github.com/Cozymori/VectorGuard)
-> **eBPF-based Linux runtime security daemon.** Monitors syscalls in real time and kills threats at the kernel level — no userspace round-trip.
+**[VectorWave](https://github.com/Cozymori/VectorWave)** ⭐22 — Decorator-based framework for self-healing LLM apps. Semantic cache via HNSW, agent-authored fix PRs on runtime error. `Python` · `PyO3` · `Weaviate`
 
-- **Fast Path** — TOML rule engine, hot-reload in <500ms, kernel-level block via `bpf_send_signal(SIGKILL)`
-- **Slow Path** — Behavior embedding → Qdrant similarity search to flag unknown attack patterns
-- **Adapters** — Native eBPF tracepoints + LSM hooks, with Tetragon / Falco / auditd integrations
-- **Deploy** — Docker Compose · systemd · Kubernetes DaemonSet (Helm)
+**[TransparentClass](https://plugins.jetbrains.com/plugin/28542-transparentclass)** — IntelliJ plugin. Surfaces inherited non-private members inline so you can read a subclass without jumping files. `Kotlin` · `IntelliJ PSI`
 
-`Rust` · `eBPF` · `LSM` · `Aya` · `Qdrant` · `Kubernetes`
+## Systems-side toys
 
----
-
-### 🌊 [VectorWave](https://github.com/Cozymori/VectorWave)
-> A decorator-based framework that turns LLM apps into **self-optimizing, self-healing systems**.
-
-Capture function execution context, serve semantically similar inputs from a vector cache, and let an autonomous agent open PRs that fix runtime errors.
-
-```python
-@vectorize(semantic_cache=True, cache_threshold=0.95)
-def expensive_llm_task(query: str):
-    ...
-```
-
-`Python` · `Rust (PyO3)` · `Weaviate` · `HNSW` · `LLM`
-**⭐ 22 · 19 releases · MIT**
+- **[Renux](https://github.com/junyeong0619/Renux)** — Remote Linux state manager. `C++`
+- **[cluster-classcache](https://github.com/junyeong0619/cluster-classcache)** — Distributed bytecode-transformation cache for JVM clusters. `Go`
+- **[MyOS](https://github.com/junyeong0619/MyOS)** — Toy OS with virtual memory. `C++`
+- **[Alfa](https://github.com/junyeong0619/Alfa)** — Auto log filtering agent. `Java`
 
 ---
 
-### 🔌 [TransparentClass](https://plugins.jetbrains.com/plugin/28542-transparentclass)
-> **IntelliJ IDEA plugin** — published on JetBrains Marketplace.
-
-Surfaces non-private inherited fields and methods from the superclass directly inside the child class editor, so you can see the full shape of a class without jumping between files.
-
-`Kotlin` · `IntelliJ Platform SDK` · `PSI`
-
----
-
-## 🌱 Open Source Contributions
-
-### ⭐ [uftrace](https://github.com/namhyung/uftrace)
-- `feat` Add `cpu` field for per-function CPU execution info — [#2039](https://github.com/namhyung/uftrace/pull/2039) ✅
-- `feat` Graph fields (total/self avg, min, max) in `cmds` & `tui` — [#1999](https://github.com/namhyung/uftrace/pull/1999) ✅
-- `feat` Support min/max timestamp in `uftrace report` — [#2032](https://github.com/namhyung/uftrace/pull/2032) ✅
-- `feat` Show callsite location with `--srcline` (DWARF line resolution via libdw) — [#2047](https://github.com/namhyung/uftrace/pull/2047) ✅
-- `fix`  Fix lost diff event from read trigger with argument tracing — [#2048](https://github.com/namhyung/uftrace/pull/2048) ✅
-
-<details>
-<summary><i>+6 more merged PRs (tests, build, fixes)</i></summary>
-
-- `test` Filter `system_initialize_function` in t295 & t296 — [#2001](https://github.com/namhyung/uftrace/pull/2001) ✅
-- `build` Enhance shell script install for Rocky Linux 9 — [#2002](https://github.com/namhyung/uftrace/pull/2002) ✅
-- `fix` Build error in `elf_for_each_comment()` — [#2034](https://github.com/namhyung/uftrace/pull/2034) ✅
-- `fix` Fix `htmlLabels` config value to boolean `true` — [#2036](https://github.com/namhyung/uftrace/pull/2036) ✅
-- `fix` Compiler warnings in `demangle` & `session` — [#2042](https://github.com/namhyung/uftrace/pull/2042) ✅
-- `test` Fix exit code of `nightly check_commits step` - [#2046](https://github.com/namhyung/uftrace/pull/2046) ✅
-
-</details>
-
-### ⭐ [airflow](https://github.com/apache/airflow) 
-- `feat` Task SDK: Add `Variable.keys()` to list variable keys by prefix — [#66022](https://github.com/apache/airflow/pull/66022) ✅
-- `fix` Allow pasting full datetime strings into date picker inputs — [#66251](https://github.com/apache/airflow/pull/66251) ✅
-- `i18n` Korean translation — [#66267](https://github.com/apache/airflow/pull/66267) ✅
-
-### ⭐ [valkey](https://github.com/valkey-io/valkey)
-- `test` Migrate cluster tests to new framework, remove legacy files — [#3382](https://github.com/valkey-io/valkey/pull/3382) ✅
-
-### ⭐ [stumpless](https://github.com/goatshriek/stumpless)
-- `feat` Implemented `struct to_string` — [#501](https://github.com/goatshriek/stumpless/pull/501) ✅
-- `i18n` Korean translation — [#502](https://github.com/goatshriek/stumpless/pull/502) ✅
-
-
-
----
-
-📧 [junyeonggim5@gmail.com](mailto:junyeonggim5@gmail.com) · 💼 [LinkedIn](https://www.linkedin.com/in/jun0619)
+📫 [junyeonggim5@gmail.com](mailto:junyeonggim5@gmail.com) · 💼 [LinkedIn](https://www.linkedin.com/in/jun0619)
