@@ -37,7 +37,7 @@ Drawn to systems programming — kernels, tracers, runtimes, anything where the 
 
 **[VectorGuard](https://github.com/Cozymori/VectorGuard)** — eBPF runtime security daemon. Rule-engine on the fast path, behavior-embedding + Qdrant on the slow path, `bpf_send_signal(SIGKILL)` for kernel-level blocking. `Rust` · `aya` · `LSM`
 
-**[VectorWave](https://github.com/Cozymori/VectorWave)** ⭐22 — Decorator-based framework for self-healing LLM apps. Semantic cache via HNSW, agent-authored fix PRs on runtime error. `Python` · `PyO3` · `Weaviate`
+**[VectorWave](https://github.com/Cozymori/VectorWave)**  — Decorator-based framework for self-healing LLM apps. Semantic cache via HNSW, agent-authored fix PRs on runtime error. `Python` · `PyO3` · `Weaviate`
 
 **[TransparentClass](https://plugins.jetbrains.com/plugin/28542-transparentclass)** — IntelliJ plugin. Surfaces inherited non-private members inline so you can read a subclass without jumping files. `Kotlin` · `IntelliJ PSI`
 
