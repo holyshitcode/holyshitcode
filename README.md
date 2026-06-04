@@ -23,6 +23,7 @@ Drawn to systems programming — kernels, tracers, runtimes, anything where the 
 | [uftrace](https://github.com/namhyung/uftrace) | `fix` Build error in `elf_for_each_comment()` — [#2034](https://github.com/namhyung/uftrace/pull/2034) |
 | [uftrace](https://github.com/namhyung/uftrace) | `fix` `htmlLabels` config value to boolean `true` (mermaid) — [#2036](https://github.com/namhyung/uftrace/pull/2036) |
 | [uftrace](https://github.com/namhyung/uftrace) | `fix` Compiler warnings in `demangle` & `session` — [#2042](https://github.com/namhyung/uftrace/pull/2042) |
+| [uftrace](https://github.com/namhyung/uftrace) | `fix` Use HDRSZ macro in symtab header size warning` — [#2053](https://github.com/namhyung/uftrace/pull/2053) |
 | [uftrace](https://github.com/namhyung/uftrace) | `ci` Exit code of nightly `check_commits` step — [#2046](https://github.com/namhyung/uftrace/pull/2046) |
 | [uftrace](https://github.com/namhyung/uftrace) | `build` Support Rocky Linux 9 in install-deps — [#2002](https://github.com/namhyung/uftrace/pull/2002) |
 | [uftrace](https://github.com/namhyung/uftrace) | `test` Filter `system_initialize_function` in t295 & t296 — [#2001](https://github.com/namhyung/uftrace/pull/2001) |
